@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by kanglg on 2017/2/24.
  */
 @Entity
-@Table(name = "b_sys_res", schema = "webapp", catalog = "")
+@Table(name = "b_sys_res")
 public class BSysRes {
     private String resId;
     private String resName;

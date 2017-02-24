@@ -3,10 +3,15 @@ package org.kanglg.app.auth.service;
 import org.kanglg.app.auth.dao.ResDao;
 import org.kanglg.app.auth.dao.RoleDao;
 import org.kanglg.app.auth.dao.UserDao;
+import org.kanglg.app.auth.entity.BSysRes;
+import org.kanglg.app.auth.entity.BSysRole;
 import org.kanglg.app.auth.entity.BSysUser;
+import org.kanglg.base.util.EndecryptUtils;
+import org.kanglg.base.util.RandomUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.Set;
 
 /**
@@ -14,6 +19,7 @@ import java.util.Set;
  * Created by kanglg on 2017/2/20.
  */
 @Service
+@Transactional
 public class UserService {
     private final UserDao userDao;
     private final RoleDao roleDao;
@@ -25,8 +31,6 @@ public class UserService {
         this.roleDao = roleDao;
         this.resDao = resDao;
     }
-
-
 
     /**
      * 根据ID查找用户
@@ -64,4 +68,14 @@ public class UserService {
         return resDao.findPermissionByAccount(account);
     }
 
+    /**
+     * 添加用户
+     * @param user 用户
+     * @return 持久化用户
+     */
+    public BSysUser addUser(BSysUser user) {
+        user.setUserId(RandomUtil.uuid());
+        user.setUserPassword(EndecryptUtils.MD5Password(user.getUserPassword(), user.getUserAccount()));
+        return userDao.save(user);
+    }
 }

@@ -5,11 +5,12 @@
         <class>org.kanglg.app.auth.entity.BSysRes</class>
         <class>org.kanglg.app.auth.entity.BSysRole</class>
         <class>org.kanglg.app.auth.entity.BSysRoleResRel</class>
-        <class>org.kanglg.app.auth.entity.BSysUser</class>
         <class>org.kanglg.app.auth.entity.BSysUserRoleRel</class>
+        <class>org.kanglg.app.auth.entity.BSysUser</class>
         <properties>
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/webapp"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.default_schema" value="webapp"/>
         </properties>
     </persistence-unit>
 </persistence>

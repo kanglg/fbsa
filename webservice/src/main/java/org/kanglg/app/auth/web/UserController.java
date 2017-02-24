@@ -30,6 +30,11 @@ public class UserController {
         BSysUser user = userService.findUserByAccount("kanglg");
         Set<String> set = userService.findRoles("kanglg");
         Set<String> set2 = userService.findPermissions("kanglg");
+        BSysUser newUser = new BSysUser();
+        newUser.setUserName("user1");
+        newUser.setUserAccount("user1");
+        newUser.setUserPassword("123456");
+        userService.addUser(newUser);
         return user;
     }
 }

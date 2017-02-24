@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by kanglg on 2017/2/24.
  */
 @Entity
-@Table(name = "b_sys_user_role_rel", schema = "webapp", catalog = "")
+@Table(name = "b_sys_user_role_rel")
 @IdClass(BSysUserRoleRelPK.class)
 public class BSysUserRoleRel {
     private String userId;
