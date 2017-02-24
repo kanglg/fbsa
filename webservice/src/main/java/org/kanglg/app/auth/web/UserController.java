@@ -30,6 +30,6 @@ public class UserController {
         BSysUser user = userService.findUserByAccount("kanglg");
         Set<String> set = userService.findRoles("kanglg");
         Set<String> set2 = userService.findPermissions("kanglg");
-        return userService.findUser("0");
+        return user;
     }
 }

@@ -34,12 +34,17 @@
                     <httpConnector>
                         <port>8080</port>
                     </httpConnector>
+                    <reload>automatic</reload>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <stopKey>foo</stopKey>
                     <stopPort>9999</stopPort>
                     <webApp>
                         <contextPath>/webapp</contextPath>
                     </webApp>
+                    <scanTargets>
+                        <scanTarget>../webservice/target/classes</scanTarget>
+                        <scanTarget>../webapp/target/classes</scanTarget>
+                    </scanTargets>
                 </configuration>
             </plugin>
         </plugins>
