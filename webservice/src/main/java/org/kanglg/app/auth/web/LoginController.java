@@ -13,5 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/login")
 public class LoginController {
     public void login(@RequestBody BSysUser user) {
+        System.out.println("Hello");
     }
 }

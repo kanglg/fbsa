@@ -34,7 +34,7 @@ public class UserController {
         newUser.setUserName("user1");
         newUser.setUserAccount("user1");
         newUser.setUserPassword("123456");
-        userService.addUser(newUser);
+//        userService.addUser(newUser);
         return user;
     }
 }

@@ -13,6 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
     @RequestMapping(method = RequestMethod.GET)
     public String index() {
-        return "Hello!";
+        return "Hello! world";
     }
 }
